@@ -1,12 +1,7 @@
 package com.example.kakao.user;
 
 import com.example.kakao.MyRestDoc;
-import com.example.kakao._core.errors.GlobalExceptionHandler;
-import com.example.kakao._core.security.CustomUserDetails;
-import com.example.kakao._core.security.JWTProvider;
-import com.example.kakao._core.security.SecurityConfig;
-import com.example.kakao.log.ErrorLogJPARepository;
-import com.fasterxml.jackson.core.JsonProcessingException;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.hamcrest.CoreMatchers;
