@@ -1,6 +1,7 @@
 package com.example.kakao.product;
 
 import com.example.kakao._core.errors.exception.Exception404;
+import com.example.kakao.product.ProductResponse.FindAllDTO;
 import com.example.kakao.product.option.Option;
 import com.example.kakao.product.option.OptionJPARepository;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +23,7 @@ public class ProductService {
 
     public ProductResponse.FindByIdDTOv2 findByIdv2(int id) {
         List<Option> optionListPS = optionRepository.findByProductIdJoinProduct(id);
-        if(optionListPS.size() == 0){
+        if(optionListPS.isEmpty()){
             throw new Exception404("해당 상품을 찾을 수 없습니다 : "+id);
         }
         return new ProductResponse.FindByIdDTOv2(optionListPS);
@@ -50,9 +51,8 @@ public class ProductService {
         // List를 stream()으로 변환 -> 자바 오브젝트의 타입이 없어진다. (강물에 흩뿌린다)
         // map으로 순회하면서 값을 변한한다. (가공)
         // 가공된 데이터를 다시 자바 오브젝트로 변환한다.
-        List<ProductResponse.FindAllDTO> responseDTOs = pageContent.getContent().stream()
-                .map(product -> new ProductResponse.FindAllDTO(product))
+        return pageContent.getContent().stream()
+                .map(FindAllDTO::new)
                 .collect(Collectors.toList());
-        return responseDTOs;
     }
 }
