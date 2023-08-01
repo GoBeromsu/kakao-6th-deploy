@@ -3,25 +3,20 @@ package com.example.kakao.order;
 import com.example.kakao.MyRestDoc;
 import com.example.kakao._core.errors.exception.Exception400;
 import com.example.kakao._core.errors.exception.Exception404;
-import com.example.kakao.cart.CartJPARepository;
+import com.example.kakao.user.User;
+import com.example.kakao.user.UserJPARepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.transaction.Transactional;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -37,11 +32,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 public class OrderRestControllerTest extends MyRestDoc {
 
-    @Autowired
-    private ObjectMapper om;
-
-    @MockBean
-    private CartJPARepository cartJPARepository;
 
     @WithUserDetails(value = "ssarmango@nate.com")
     @Test
@@ -95,13 +85,13 @@ public class OrderRestControllerTest extends MyRestDoc {
                 .andExpect(result -> assertTrue(result.getResolvedException() instanceof Exception404))
                 .andExpect(result -> assertEquals("해당 주문이 존재하지 않습니다 : " + id,
                         result.getResolvedException().getMessage()));
+        resultActions.andDo(MockMvcResultHandlers.print()).andDo(document);
     }
 
-    @WithUserDetails(value = "ssarmango@nate.com")
+    // SQL을 추가하지 않고 하는 방법이 없을까? , Mockito나 testService 등을 만들었는데 자원 낭비라 여겨저서 user 생성 SQL을 추가하였다
+    @WithUserDetails(value = "ssarmango2@nate.com")
     @Test
     public void save_test_with_empty_cart() throws Exception {
-        Mockito.when(cartJPARepository.findByUserIdOrderByOptionIdAsc(Mockito.anyInt()))
-                .thenReturn(new ArrayList<>());
 
         ResultActions resultActions = mvc.perform(
                 post("/carts/orders/save")
@@ -114,7 +104,7 @@ public class OrderRestControllerTest extends MyRestDoc {
                 .andExpect(result -> assertTrue(result.getResolvedException() instanceof Exception400))
                 .andExpect(
                         result -> assertEquals("장바구니가 비어있습니다.", result.getResolvedException().getMessage()));
+        resultActions.andDo(MockMvcResultHandlers.print()).andDo(document);
     }
-
 
 }
