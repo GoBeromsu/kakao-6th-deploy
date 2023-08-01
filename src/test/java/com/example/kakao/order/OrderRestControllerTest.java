@@ -38,7 +38,7 @@ public class OrderRestControllerTest extends MyRestDoc {
     public void save_test() throws Exception {
 
         ResultActions resultActions = mvc.perform(
-                post("/carts/orders/save")
+                post("/orders/save")
         );
         String responseBody = resultActions.andReturn().getResponse().getContentAsString();
         System.out.println("Save Test: " + responseBody);
@@ -52,7 +52,7 @@ public class OrderRestControllerTest extends MyRestDoc {
     public void findById_test() throws Exception {
         int id = 1;
         ResultActions resultActions = mvc.perform(
-                get("/carts/orders/" + id)
+                get("/orders/" + id)
         );
 
         String responseBody = resultActions.andReturn().getResponse().getContentAsString();
@@ -76,7 +76,7 @@ public class OrderRestControllerTest extends MyRestDoc {
     public void findById_test_with_invalid_id() throws Exception {
         int id = -1; // invalid id
         ResultActions resultActions = mvc.perform(
-                get("/carts/orders/" + id)
+                get("/orders/" + id)
         );
         String responseBody = resultActions.andReturn().getResponse().getContentAsString();
         System.out.println("findById_test_with_invalid_id : " + responseBody);
@@ -94,7 +94,7 @@ public class OrderRestControllerTest extends MyRestDoc {
     public void save_test_with_empty_cart() throws Exception {
 
         ResultActions resultActions = mvc.perform(
-                post("/carts/orders/save")
+                post("/orders/save")
         );
 
         String responseBody = resultActions.andReturn().getResponse().getContentAsString();

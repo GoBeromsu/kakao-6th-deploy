@@ -14,23 +14,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class OrderRestController {
 
-  private final OrderService orderservice;
+    private final OrderService orderservice;
 
-  // (기능9) 결재하기 - (주문 인서트) POST
-  // /orders/save
-  @PostMapping("carts/orders/save")
-  public ResponseEntity<?> save(@AuthenticationPrincipal CustomUserDetails userDetails) {
-    OrderResponse.SaveDTO responseDTO = orderservice.save(userDetails.getUser());
-    return ResponseEntity.ok(ApiUtils.success(responseDTO));
-  }
+    // (기능9) 결재하기 - (주문 인서트) POST
+    // /orders/save
+    @PostMapping("orders/save")
+    public ResponseEntity<?> save(@AuthenticationPrincipal CustomUserDetails userDetails) {
+        OrderResponse.SaveDTO responseDTO = orderservice.save(userDetails.getUser());
+        return ResponseEntity.ok(ApiUtils.success(responseDTO));
+    }
 
-  // (기능10) 주문 결과 확인 GET
-  // /orders/{id}
-  @GetMapping("carts/orders/{id}")
-  public ResponseEntity<?> findById(@PathVariable int id) {
-    OrderResponse.FindByIdDTO responseDTO = orderservice.findById(id);
-    return ResponseEntity.ok(ApiUtils.success(responseDTO));
-  }
+    // (기능10) 주문 결과 확인 GET
+    // /orders/{id}
+    @GetMapping("orders/{id}")
+    public ResponseEntity<?> findById(@PathVariable int id) {
+        OrderResponse.FindByIdDTO responseDTO = orderservice.findById(id);
+        return ResponseEntity.ok(ApiUtils.success(responseDTO));
+    }
 
 
 }
