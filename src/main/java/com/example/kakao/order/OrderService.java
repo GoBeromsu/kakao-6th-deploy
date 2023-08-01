@@ -6,9 +6,6 @@ import com.example.kakao.cart.Cart;
 import com.example.kakao.cart.CartJPARepository;
 import com.example.kakao.order.item.Item;
 import com.example.kakao.order.item.ItemJPARepository;
-import com.example.kakao.product.Product;
-import com.example.kakao.product.ProductJPARepository;
-import com.example.kakao.product.ProductService;
 import com.example.kakao.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Transactional(readOnly = true)
 @RequiredArgsConstructor

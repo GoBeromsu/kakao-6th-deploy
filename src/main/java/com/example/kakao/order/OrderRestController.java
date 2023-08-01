@@ -2,7 +2,6 @@ package com.example.kakao.order;
 
 import com.example.kakao._core.security.CustomUserDetails;
 import com.example.kakao._core.utils.ApiUtils;
-import com.example.kakao.order.OrderResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -15,13 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class OrderRestController {
 
-  private final OrderService OrderService;
+  private final OrderService orderservice;
 
   // (기능9) 결재하기 - (주문 인서트) POST
   // /orders/save
   @PostMapping("carts/orders/save")
   public ResponseEntity<?> save(@AuthenticationPrincipal CustomUserDetails userDetails) {
-    OrderResponse.SaveDTO responseDTO = OrderService.save(userDetails.getUser());
+    OrderResponse.SaveDTO responseDTO = orderservice.save(userDetails.getUser());
     return ResponseEntity.ok(ApiUtils.success(responseDTO));
   }
 
@@ -29,7 +28,7 @@ public class OrderRestController {
   // /orders/{id}
   @GetMapping("carts/orders/{id}")
   public ResponseEntity<?> findById(@PathVariable int id) {
-    OrderResponse.FindByIdDTO responseDTO = OrderService.findById(id);
+    OrderResponse.FindByIdDTO responseDTO = orderservice.findById(id);
     return ResponseEntity.ok(ApiUtils.success(responseDTO));
   }
 
