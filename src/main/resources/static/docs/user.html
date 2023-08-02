@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<meta name="author" content="Berom">
-<title>카카오 쇼핑하기 RestAPI</title>
+<title>사용자</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,29 +438,162 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>카카오 쇼핑하기 RestAPI</h1>
-<div class="details">
-<span id="author" class="author">Berom</span><br>
-<span id="email" class="email"><a href="mailto:gobeumsu@gmail.com">gobeumsu@gmail.com</a></span><br>
-<span id="revnumber">version 1.0</span>
-</div>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_사용자">사용자</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_회원_가입">회원 가입</h3>
+<div class="sect3">
+<h4 id="_회원_가입_2">회원 가입</h4>
+<div class="sect4">
+<h5 id="_요청_예시">요청 예시</h5>
 <div class="paragraph">
-<p>Unresolved directive in api-docs.adoc - include::product.adoc[]
-Unresolved directive in api-docs.adoc - include::cart.adoc[]
-Unresolved directive in api-docs.adoc - include::order.adoc[]
-Unresolved directive in api-docs.adoc - include::user.adoc[]</p>
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/join_test/http-request.adoc[]</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_응답_예시">응답 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/join_test/response-body.adoc[]</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_잘못된_이메일로_가입_시도">잘못된 이메일로 가입 시도</h4>
+<div class="sect4">
+<h5 id="_요청_예시_2">요청 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/join_test_wrong_email/http-request.adoc[]</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_응답_예시_2">응답 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/join_test_wrong_email/response-body.adoc[]</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_잘못된_비밀번호_형식으로_가입_시도">잘못된 비밀번호 형식으로 가입 시도</h4>
+<div class="sect4">
+<h5 id="_요청_예시_3">요청 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/join_test_wrong_format_password/http-request.adoc[]</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_응답_예시_3">응답 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/join_test_wrong_format_password/response-body.adoc[]</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_같은_이메일로_가입_시도">같은 이메일로 가입 시도</h4>
+<div class="sect4">
+<h5 id="_요청_예시_4">요청 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/join_test_same_email/http-request.adoc[]</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_응답_예시_4">응답 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/join_test_same_email/response-body.adoc[]</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_잘못된_비밀번호로_가입_시도">잘못된 비밀번호로 가입 시도</h4>
+<div class="sect4">
+<h5 id="_요청_예시_5">요청 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/join_test_wrong_password/http-request.adoc[]</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_응답_예시_5">응답 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/join_test_wrong_password/response-body.adoc[]</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>=== 로그인</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_로그인">로그인</h4>
+<div class="sect4">
+<h5 id="_요청_예시_6">요청 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/login_test/http-request.adoc[]</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_응답_예시_6">응답 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/login_test/response-body.adoc[]</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_잘못된_이메일로_로그인_시도">잘못된 이메일로 로그인 시도</h4>
+<div class="sect4">
+<h5 id="_요청_예시_7">요청 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/login_test_invalid_email/http-request.adoc[]</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_응답_예시_7">응답 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/login_test_invalid_email/response-body.adoc[]</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_잘못된_비밀번호_형식으로_로그인_시도">잘못된 비밀번호 형식으로 로그인 시도</h4>
+<div class="sect4">
+<h5 id="_요청_예시_8">요청 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/login_test_invalid_format_password/http-request.adoc[]</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_응답_예시_8">응답 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/login_test_invalid_format_password/response-body.adoc[]</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_잘못된_비밀번호_길이로_로그인_시도">잘못된 비밀번호 길이로 로그인 시도</h4>
+<div class="sect4">
+<h5 id="_요청_예시_9">요청 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/login_test_invalid_length_password/http-request.adoc[]</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_응답_예시_9">응답 예시</h5>
+<div class="paragraph">
+<p>Unresolved directive in user.adoc - include::{snippets}/user-rest-controller-test/login_test_invalid_length_password/response-body.adoc[]</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2023-08-02 10:36:36 +0900
+Last updated 2023-08-02 11:57:10 +0900
 </div>
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-<script>hljs.initHighlighting()</script>
 </body>
 </html>
