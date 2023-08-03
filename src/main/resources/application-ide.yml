@@ -31,7 +31,6 @@ logging:
 
 file:
   path: ./images/
-
 springdoc:
   packages-to-scan: com.example.kakao
   default-consumes-media-type: application/json;charset=UTF-8
@@ -41,3 +40,4 @@ springdoc:
     disable-swagger-default-url: true
     display-request-duration: true
     operations-sorter: alpha
+
