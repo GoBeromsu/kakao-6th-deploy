@@ -5,6 +5,9 @@ server:
       force: true
   port: 8080
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   datasource:
     url: jdbc:mariadb://localhost:3306/kakao?allowPublicKeyRetrieval=true&useSSL=false
     driver-class-name: org.mariadb.jdbc.Driver
