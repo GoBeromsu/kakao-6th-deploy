@@ -24,8 +24,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
-    implementation("org.springdoc:springdoc-openapi-ui:1.6.11")
-    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2")
+    implementation "org.springdoc:springdoc-openapi-ui:1.6.11"
     // local, test
     runtimeOnly 'com.h2database:h2'
     // third party
