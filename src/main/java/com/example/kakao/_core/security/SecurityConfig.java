@@ -72,7 +72,6 @@ public class SecurityConfig {
                 authorize -> authorize.antMatchers("/carts/**", "/options/**", "/orders/**", "/users/**").authenticated()
                         .antMatchers("/admin/**")
                         .access("hasRole('ADMIN')")
-                        .antMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll() // Add this line
                         .anyRequest().permitAll()
         );
 
