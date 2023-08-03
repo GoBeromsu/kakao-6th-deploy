@@ -25,6 +25,10 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
     implementation "org.springdoc:springdoc-openapi-ui:1.6.11"
+
+    // kargo, ide
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
     // local, test
     runtimeOnly 'com.h2database:h2'
     // third party
